@@ -22,9 +22,9 @@ app.use(cors());
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/friends', Friend.getFriends());
-
-app.post('/friends/new', Friend.addFriend());
+app.get('/friends', Friend.getFriends);
+app.post('/friends', Friend.addFriend);
+app.delete('/friends/:id', Friend.unFriend);
 
 
 mongoose.connect(databaseReference);
